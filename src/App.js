@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react';
-import Input from '../src/components/form/Input/input';
+import TodoList from '../src/containers/todoList/TodoList';
 import './App.css';
 
 function App() {
@@ -7,9 +7,7 @@ function App() {
   return (
     <React.Fragment>
       <main>
-        <form action="">
-          <button type="submit" onClick={(e) => submit(e)}>Submit</button>
-        </form>
+        <TodoList />
       </main>
     </React.Fragment>
   );
