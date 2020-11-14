@@ -8,11 +8,7 @@ ul li {
 
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  background-color: orange;
 }
 
 @media (prefers-reduced-motion: no-preference) {

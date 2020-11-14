@@ -42,7 +42,7 @@ function TodoList() {
         <React.Fragment>
             <Container>
                 <Row>
-                    <Col sm={4}>
+                    <Col sm={4} offset={{ md: 4 }}>
                         <Form action="">
                             <FormHeader>You Have {numberOfTodoes} Todos</FormHeader>
                             <InputList todo={todo} todoList={todoList} deleteTodo={deleteTodo} setTodoHandler={setTodoHandler} submit={submit} />
