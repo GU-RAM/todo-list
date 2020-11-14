@@ -1,5 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import InputList from '../../components/inputList/inputList';
+import styled from 'styled-components';
+import { Container, Row, Col } from 'react-grid-system';
 
 function TodoList() {
     const [todo, setTodo] = useState('');
@@ -38,15 +40,29 @@ function TodoList() {
 
     return (
         <React.Fragment>
-            <main>
-                <form action="">
-                    <h1>You Have {numberOfTodoes} Todos</h1>
-                    <InputList todo={todo} todoList={todoList} deleteTodo={deleteTodo} setTodoHandler={setTodoHandler} />
-                    <button type="submit" onClick={(e) => submit(e)}>Submit</button>
-                </form>
-            </main>
+            <Container>
+                <Row>
+                    <Col sm={4}>
+                        <Form action="">
+                            <FormHeader>You Have {numberOfTodoes} Todos</FormHeader>
+                            <InputList todo={todo} todoList={todoList} deleteTodo={deleteTodo} setTodoHandler={setTodoHandler} submit={submit} />
+                        </Form>
+                    </Col>
+                </Row>
+            </Container>
         </React.Fragment>
     );
 }
 
 export default TodoList;
+
+const Form = styled.form`
+    
+`
+const FormHeader = styled.h1`
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    background-color: lightblue;
+    margin-bottom: 0;
+`
