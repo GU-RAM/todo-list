@@ -6,10 +6,10 @@ export default function inputList({ todo, todoList, deleteTodo, setTodoHandler, 
     const list = () => {
         return (
             <Ul>
-                {todoList && todoList.map((list, index) => {
+                {todoList && todoList.map(({ id, listTodo }, index) => {
                     return (
-                        list && list.id && list.listTodo && <Li key={list.id}>Text {index + 1} <span>{list.listTodo}</span>
-                            <DelSpan onClick={() => deleteTodo(list.id)}>X</DelSpan></Li>
+                        id && listTodo && <Li key={id}><span>Text {index + 1} </span><span>{listTodo}</span>
+                            <DelSpan onClick={() => deleteTodo(id)}>X</DelSpan></Li>
                     )
                 })
                 }
@@ -34,17 +34,25 @@ const Ul = styled.ul`
     margin: 0;
 `
 const Li = styled.li`
-    padding: 10px;
     border-bottom: 2px solid black;
     background-color: lightblue;
-    display: flex;
+    display: flex; 
+    padding: 10px 0;
 
-    & span:first-child {
-        margin-left: 20px
+    & span {
+        padding: 20px 10px;
+        /* min-width: 10%; */
+    }
+
+    & span:nth-child(2) {
+        max-width: calc(100% - 100px);
+        overflow: auto; 
+        padding: 20px 0;
     }
 `
 
 const DelSpan = styled.span`
+    padding: 0 10px;
     margin-left: auto;
     cursor: pointer;
 `

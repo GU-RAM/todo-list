@@ -1,11 +1,10 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import InputList from '../../components/inputList/inputList';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 
 function TodoList() {
     const [todo, setTodo] = useState('');
-    console.log("TodoList -> todo", todo)
     const [todoList, setTodoList] = useState([]);
     const [listId, setListId] = useState(1);
     const [numberOfTodoes, setNumberOfTodoes] = useState(0);
@@ -42,7 +41,7 @@ function TodoList() {
         <React.Fragment>
             <Container>
                 <Row>
-                    <Col sm={4} offset={{ md: 4 }}>
+                    <Col sm={12} md={8} lg={4} offset={{ lg: 4 }}>
                         <Form action="">
                             <FormHeader>You Have {numberOfTodoes} Todos</FormHeader>
                             <InputList todo={todo} todoList={todoList} deleteTodo={deleteTodo} setTodoHandler={setTodoHandler} submit={submit} />

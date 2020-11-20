@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React from 'react';
 import TodoList from '../src/containers/todoList/TodoList';
 import styled from 'styled-components';
 import './App.css';
