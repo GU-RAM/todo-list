@@ -12,11 +12,11 @@ function TodoList() {
     todo && addListHandler({ listTodo: todo }, setTodo);
   };
 
-  const addListHandler = (list,   setTodo) => {
+  const addListHandler = (list, setTodo) => {
     // Merge with submit
     setTodoList((prevTodo) => [...prevTodo, { id: listId, ...list }]);
     setListId(listId + 1);
-      setTodo("");
+    setTodo("");
   };
 
   const deleteTodo = (listToDelete) => {
